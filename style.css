@@ -35,7 +35,27 @@ body {
 .hero {
   background: linear-gradient(120deg, #e0e7ff 0%, #f9f9fb 100%);
   padding: 6rem 0 4rem 0;
-  text-align: center;
+}
+.hero-flex {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 3rem;
+}
+.hero-text {
+  flex: 2;
+}
+.hero-img {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+}
+.hero-img img {
+  width: 220px;
+  height: 220px;
+  object-fit: cover;
+  border-radius: 50%;
+  box-shadow: 0 4px 32px rgba(45,45,255,0.08);
 }
 .hero h1 {
   font-size: 3rem;
@@ -62,8 +82,23 @@ body {
 .btn-main:hover {
   background: #1a1aff;
 }
-.about, .projects, .contact {
+.about {
   padding: 4rem 0 2rem 0;
+}
+.about-flex {
+  display: flex;
+  align-items: center;
+  gap: 3rem;
+}
+.about-img img {
+  width: 180px;
+  height: 180px;
+  object-fit: cover;
+  border-radius: 1.5rem;
+  box-shadow: 0 4px 24px rgba(45,45,255,0.08);
+}
+.about-text {
+  flex: 2;
 }
 .about h2, .projects h2, .contact h2 {
   color: #2d2dff;
@@ -81,6 +116,17 @@ body {
   padding: 2rem;
   flex: 1 1 250px;
   min-width: 250px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.project-card img {
+  width: 100%;
+  max-width: 240px;
+  height: 140px;
+  object-fit: cover;
+  border-radius: 0.8rem;
+  margin-bottom: 1rem;
 }
 .contact-form {
   display: flex;
@@ -116,4 +162,21 @@ body {
   color: #888;
   font-size: 0.9rem;
   margin-top: 2rem;
+}
+@media (max-width: 900px) {
+  .hero-flex, .about-flex {
+    flex-direction: column;
+    text-align: center;
+  }
+  .hero-img, .about-img {
+    margin-bottom: 2rem;
+  }
+  .container {
+    flex-direction: column;
+    gap: 1.5rem;
+  }
+  .project-list {
+    flex-direction: column;
+    gap: 1.5rem;
+  }
 }
